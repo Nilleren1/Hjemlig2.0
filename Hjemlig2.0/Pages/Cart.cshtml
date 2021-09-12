@@ -1,0 +1,48 @@
+﻿@page
+@model Hjemlig2._0.Pages.CartModel
+@{
+}
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Product name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    @if (Model.ProductsInCart.Count != 0) {
+        <tbody>
+            @foreach (var product in Model.ProductsInCart) {
+                <tr>
+                    <td class="text-center">@product.Name</td>
+                    <td class="text-left">@product.Price</td>
+                    <td class="text-right">@product.Category</td>
+                    <td class="text-center">@product.Description</td>
+
+                    <td class="text-right">@product.Price.ToString("c")</td>
+                    <td>
+                        <form method="post">
+                            <button asp-page-handler="Delete" asp-route-id="@product.Id"
+                                    class="btn btn-danger btn-group-lg pull-right">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+
+
+    }
+</table>
+<p colspan="3" class="text-right">Total:</p>
+    <p class="text-right">
+        @Model.cartService.CalculateTotalPrice().ToString("c") kr
+    </p>
+
+<div class="text-center">
+    <a asp-page="/Products" class="btn btn-primary">Continue shopping</a>
+</div>

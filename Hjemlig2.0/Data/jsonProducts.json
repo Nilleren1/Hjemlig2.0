@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Sandaler",
+    "Category": "Footwear",
+    "Price": 39.95,
+    "Description": "Lynet mcqueen sandaler, for voksne.",
+    "Image": "sandaler.jpg"
+  },
+  {
+    "Id": 0,
+    "Name": "Kartoffel",
+    "Category": "mad",
+    "Price": 40.0,
+    "Description": "Det er en kartoffel",
+    "Image": "sandaler.jpg"
+  },
+  {
+    "Id": 0,
+    "Name": "Jordbær",
+    "Category": null,
+    "Price": 2.0,
+    "Description": null,
+    "Image": "sandaler.jpg"
+  }
+]

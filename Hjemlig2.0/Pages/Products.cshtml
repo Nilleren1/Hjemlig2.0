@@ -1,0 +1,30 @@
+﻿@page
+@model Hjemlig2._0.Pages.ProductsModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<body>
+    <div class="text-center">
+        <header>
+            <h1 class="display-4">Products</h1>
+        </header>
+        <div class="merch-container">
+            <ul class="merch-ul">
+                @foreach (var item in Model.Products)
+                {
+                    <li class="merch-display">
+                        <img src="~/imgs/@item.Image" style="width: 250px; height: 250px; padding: 15px; object-fit: cover;" />
+                        <p>@item.Name</p>
+                        <p>@item.Price</p>
+                        <a asp-page="Cart" asp-route-id="@item.Id"
+                           class="btn btn-success btn-group-lg pull-right"> Add to Cart
+                        </a>
+
+                    </li>                
+
+                }
+            </ul>
+        </div>
+    </div>
+</body>
